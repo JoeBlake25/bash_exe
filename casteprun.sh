@@ -14,4 +14,4 @@
 
 
 
-mpirun -srun  castep.mpi Tl2NiMnO6
+mpirun -srun  castep.mpi <seedname>
