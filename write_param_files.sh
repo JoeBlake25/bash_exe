@@ -4,15 +4,16 @@
 echo "Enter the seedname"
 read seedname
 
-echo "please enter either 1 or 2 for energy or fine_grid_scale convergnce testing"
-read testing
+echo "please enter either 'singlepoint' or 'fine_grid_scale' convergnce testing"
+read testing 
+echo -ne  $testing /t >> 'writing.temp'
  
 
 echo "what task would you like CASTEP to run?"
 read task
 
 
-if (( $testing == 1)); then 
+if (( grep -q 'singlepoint' writing.temp )); then 
    echo "what is the minimum and maximum energy youd like to start testing?"
    read min_energy max_energy
 
